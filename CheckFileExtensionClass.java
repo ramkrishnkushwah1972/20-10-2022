@@ -1,12 +1,12 @@
-/*	2.	After mentioning to Professor Jackson that you would like to get some more practice with exceptions, she offered to let you write some grading software! Before she gives you full control over auto-grading students’ work, she asked if you could write a function called checkFileExtension(). 
+/*	2.	After mentioning to Professor Jackson that you would like to get some more practice with exceptions, she offered to let you write some grading software! Before she gives you full control over auto-grading studentsâ€™ work, she asked if you could write a function called checkFileExtension(). 
 	
 	The checkFileExtension() method takes in one parameter: fileName.
 	
 	checkFileExtension() should return an integer representing the number of points a student receives for properly submitting a file in Java. 
 	
-	If a student’s submitted file ends in .java, they get 1 point. 
+	If a studentâ€™s submitted file ends in .java, they get 1 point. 
 	
-	If a student’s submitted file doesn’t end in .java, they get 0 points. 
+	If a studentâ€™s submitted file doesnâ€™t end in .java, they get 0 points. 
 	
 	If the file submitted is null or an empty string, an exception should be thrown and you should give the student -1 points. 
 	
@@ -30,9 +30,9 @@ public class CheckFileExtensionClass {
 			int i=0;
 			for(String file:files)
 			{
-				int r = checkFileExtension(file);
+				int number = checkFileExtension(file);
 				
-				if(r == 1)
+				if(number == 1)
 					System.out.println("Hello "+students[i]+" Your file is a java file. So your score is 1 ");
 				else
 					System.out.println("Hello "+students[i]+" Your file is not a java file. So your score is 0 ");
@@ -67,7 +67,8 @@ public class CheckFileExtensionClass {
 		}
 		
 		String file="";
-		//This loop used for get (.java) string from filename and store file variable
+		//This loop used for get (.java) string from filename and store file variable 
+		//if you don't want to use for loop so you can use endsWith() method.
 		for(int i=fileName.length()-1; i>=fileName.length()-5; i--)
 		{
 			if(i>0)
