@@ -1,4 +1,11 @@
-/*	1.	The professor you TA (Training Associate) for, Professor Jackson, shared with you the code she uses to auto-grade students’ work. She and the other TAs have encountered some problems with the code in the past when they enter the total possible point value for an assignment. Occasionally, they accidentally enter 0 for the total number of possible points and the program encounters a fatal error when trying to divide by 0.
+/*	1.	The professor you TA (Training Associate) for, Professor 
+ 	Jackson, shared with you the code she uses to auto-grade 
+ 	studentsâ€™ work. She and the other TAs have encountered some
+  	problems with the code in the past when they enter the total 
+  	possible point value for an assignment. Occasionally, they 
+  	accidentally enter 0 for the total number of possible points
+   	and the program encounters a fatal error when trying to 
+   	divide by 0.
 
 	To help out with this issue, complete a function called divide() in Main. 
 
@@ -27,21 +34,21 @@ public class DivisionClass {
 		System.out.println("Enter denominator");
 		int y=input.nextInt();
 
-		System.out.println("Devision : "+divide(x,y));
-	
+		try {
+			System.out.println("Quotient : "+divide(x,y));
+		}catch(ArithmeticException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
 		input.close();
 	}
 
-	public static int divide(int x, int y) {
-		int d=0;
-		try {
-			d = x/y;
-			
-		}catch(ArithmeticException e) {
-			System.out.println("Can not divide by zero");
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
+	public static double divide(int x, int y) {
+		if(y==0) {
+			throw new ArithmeticException("Can not divide by zero");
 		}
-		return d;
+		return (double)x/y;
 	}
 }
